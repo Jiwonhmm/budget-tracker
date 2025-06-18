@@ -39,6 +39,8 @@ def load_data(datafile):
     #         print(row)
     try:
         df= pd.read_csv(datafile)
+        df.columns = df.columns.str.strip().str.lower() 
+        df["amount"] = pd.to_numeric(df["amount"], errors="coerce")
         return df
     except FileNotFoundError:
         print("No data file found")
@@ -51,9 +53,9 @@ def view_summary(datafile):
     df = load_data(datafile)
     
     #income
-    income = df[df["Type"]=="income"]["Amount"].sum()
+    income = df[df["type"]=="income"]["amount"].sum()
     #expenditure
-    expense = df[df["Type"]=='expense']["Amount"].sum()
+    expense = df[df["type"]=='expense']["amount"].sum()
     #balance
     balance = income-expense
 
