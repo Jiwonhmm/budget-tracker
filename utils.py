@@ -3,13 +3,16 @@ import pandas as pd
 import os  # study this part again
 
 #input
-def add_transaction():
-    date=input("Date: ")
-    item=input("Item: ")
-    category=input("Category: ")
-    amount=input("Amount: ")
+def add_transaction(date, item, category,amount, type_):
+    # date=input("Date: ")
+    # item=input("Item: ")
+    # category=input("Category: ")
+    # amount=input("Amount: ")
+    # float_amount = float(amount)
+    # type_ = input("Type (income/expense): ").strip().lower()
+    #CLI to Flask
+
     float_amount = float(amount)
-    type_ = input("Type (income/expense): ").strip().lower()
 
     return [date, item, category,float_amount, type_]
 
