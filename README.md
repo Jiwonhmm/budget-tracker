@@ -75,15 +75,18 @@ venv\Scripts\activate
 # Windows (PowerShell)
 venv\Scripts\Activate.ps1
 
+
+
 🧾 To Do / Future Improvements
 
- CSV Export/Download button
- Category filter in summary
- Persistent database (SQLite)
- User login system (Flask-Login)
- Chart visualization (Chart.js)
+CSV Export/Download button
+Category filter in summary
+Persistent database (SQLite)
+User login system (Flask-Login)
+Chart visualization (Chart.js)
 
- ## ✨ Screenshot
+
+✨ Screenshot
+
 Here’s the landing page of the Budget Tracker app:
-
 ![App Screenshot](images/screenshot.png)
