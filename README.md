@@ -74,7 +74,7 @@ venv\Scripts\activate
 
 # Windows (PowerShell)
 venv\Scripts\Activate.ps1
-
+```
 
 
 🧾 To Do / Future Improvements
