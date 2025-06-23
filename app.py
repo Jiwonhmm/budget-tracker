@@ -22,7 +22,7 @@ def cashflow():
 
     return redirect('/summary')
 
-@app.route('/summary')
+@app.route('/summary',methods=['GET'])
 def summary():
     result = view_summary(DATA_FILE)
     return render_template('summary.html', summary=result)

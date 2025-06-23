@@ -77,14 +77,51 @@
               <div class="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                 Starting budget management <a href="#" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
               </div>
+              
             </div>
             <div class="text-center">
               <h1 class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl">Track Your Budget with Ease</h1>
               <p class="mt-6 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">Input your income and expenses to stay in control of your finances.</p>
               <div class="mt-8 flex items-center justify-center gap-x-6">
-                <a href="/" class="text-sm font-semibold text-gray-900">Add Entry</a>
-                <a href="/summary" class="text-sm font-semibold text-gray-900">Summary</a>
-            </div>
+                <div class="mt-12">
+                    <form action="/cashflow" method="POST" class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md space-y-4">
+                      <div>
+                        <label class="block text-sm font-medium text-gray-700">Date</label>
+                        <input type="date" name="date" required class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500" />
+                      </div>
+                  
+                      <div>
+                        <label class="block text-sm font-medium text-gray-700">Item</label>
+                        <input type="text" name="item" required class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500" />
+                      </div>
+                  
+                      <div>
+                        <label class="block text-sm font-medium text-gray-700">Category</label>
+                        <input type="text" name="category" required class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500" />
+                      </div>
+                  
+                      <div>
+                        <label class="block text-sm font-medium text-gray-700">Amount</label>
+                        <input type="number" step="0.01" name="amount" required class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500" />
+                      </div>
+                  
+                      <div>
+                        <label class="block text-sm font-medium text-gray-700">Type</label>
+                        <select name="type" required class="mt-1 w-full rounded-md border-gray-300 shadow-sm text-center text-gray-500 focus:ring-indigo-500 focus:border-indigo-500">
+                          <option value="income">Income</option>
+                          <option value="expense">Expense</option>
+                        </select>
+                      </div>
+                  
+                      <div class="text-center">
+                        <button type="submit" class="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-white font-medium hover:bg-indigo-700">
+                          Submit
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                  
+                </div>
           </div>
           
           <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
