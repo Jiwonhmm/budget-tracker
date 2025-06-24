@@ -68,3 +68,34 @@ def view_summary(datafile):
         "balance": balance
     }
 
+
+#extract income data
+def get_total_income(datafile):
+    df = load_data(datafile)
+    #income
+    income = df[df["type"]=="income"]["amount"].sum()
+    return income
+
+#extract expense data
+def get_total_expense(datafile):
+    df = load_data(datafile)
+    #income
+    expense = df[df["type"]=="expense"]["amount"].sum()
+    return expense
+
+#extract categorized cash flow
+def get_category_cashflow(datafile):
+    df=load_data(datafile)
+
+    #make group income, expense each
+    income_df = df[df["type"] == "income"].groupby("category")["amount"].sum()
+    expense_df = df[df["type"] == "expense"].groupby("category")["amount"].sum()
+
+    # Combine the income and expense series side by side into a single DataFrame
+    summary_df = pd.concat([income_df, expense_df], axis=1, keys=["income", "expense"]).fillna(0)
+    
+    #cacluate balance
+    summary_df["balance"] = summary_df["income"] - summary_df["expense"]
+
+    # reset index to column
+    return summary_df.reset_index()
