@@ -1,92 +1,86 @@
-# 🧾 Budget Tracker App (Python CLI)
+# 🧾 Budget Tracker App (CLI + Flask)
 
-A simple budget tracker CLI app built with Python, CSV, and Pandas.
+A simple personal budget tracker built with Python.  
+First as a **CLI tool**, now upgraded to a **web app** using Flask and TailwindCSS.
+
+---
 
 ## 💡 What I Learned
 
-- How to use `csv` and `os` modules for file management
-- Basic `pandas` DataFrame processing and data cleaning
-- User input handling and data validation
-- Exception handling for robust applications
-- How to structure a Python project with modularity (`utils.py`)
+- `csv` and `os` modules for file management
+- `pandas` for DataFrame processing and cleaning
+- Flask basics: routing, templates, form handling
+- TailwindCSS layout and responsive design
+- Modularity: shared logic in `utils.py`
+- Exception handling for robust data entry
+
+---
+
+## 🖥️ Today’s Progress – Summary Page
+
+✅ Implemented a `/summary` route that:
+- Calculates total **income**, **expense**, and **balance**
+- Displays the results clearly in a styled HTML table
+- Uses `utils.py` to process the CSV and return summarized data
+- Connected with the main form page for smooth UX
+
+---
 
 ## 🛠 Tech Stack
 
 - Python 3.x
-- CSV
+- Flask
 - Pandas
-- CLI-based interaction
+- CSV
+- TailwindCSS
+
+---
 
 ## 🗂 Project Structure
-budget-tracker/
-│
-├── utils.py # Functions for adding, saving, summarizing data
-├── app.py # CLI runner script
-└── data/
-└── budget.csv # Stored budget data
 
+app.py               # Flask app
+utils.py             # Reusable logic (add/save/view)
 
-This is part of my self-paced curriculum to become a backend developer.  
-Check out my GitHub profile for more learning projects.
+data/
+└── budget.csv       # Budget data file
 
-# 📊 Budget Tracker (Flask + TailwindCSS)
+static/
+└── images/          # UI icons / screenshots
 
-A simple and clean web application to **track income and expenses**, built with **Flask** and styled using **Tailwind CSS**.
+templates/
+├── index.html       # Form page
+└── summary.html     # Summary page
 
----
-
-## ✅ Features
-
-- 💰 Add income and expense entries through a user-friendly form
-- 📊 View summary of total income, expenses, and balance
-- 📁 Save data to CSV file (`data/budget.csv`)
-- 🧠 Reuses CLI logic in `utils.py`
-- 🌐 Responsive design using TailwindCSS
-- 🖥️ Mobile & desktop navigation support
-
----
-
-## 🗂️ Project Structure
-
-budget-tracker/
-├── app.py # Main Flask app
-├── utils.py # Helper functions (add/save/view)
-├── data/
-│ └── budget.csv # CSV data file
-├── templates/
-│ ├── index.html # Budget entry form page
-│ └── summary.html # Summary page
-├── venv/ # Python virtual environment
+venv/                # Virtual environment
 
 
 ---
 
 ## 🚀 How to Run
 
-### 1. Activate virtual environment
-
 ```bash
-# macOS/Linux
+# 1. Activate venv
 source venv/bin/activate
 
-# Windows (CMD)
-venv\Scripts\activate
+# 2. Run the app
+python app.py
 
-# Windows (PowerShell)
-venv\Scripts\Activate.ps1
 ```
+Then open your browser and go to:
+👉 http://127.0.0.1:5000
 
 
-🧾 To Do / Future Improvements
 
-CSV Export/Download button
-Category filter in summary
-Persistent database (SQLite)
-User login system (Flask-Login)
-Chart visualization (Chart.js)
+📌 To Do / Future Improvements
 
-
+⬇ CSV Export/Download button
+🗂 Filter summary by category
+🗓 Filter by date or date range
+🧱 Move from CSV to SQLite (persistent storage)
+🔐 Add User Login System (Flask-Login)
+📈 Add visualization with Chart.js (income/expense trends)
 ✨ Screenshot
 
 Here’s the landing page of the Budget Tracker app:
-![App Screenshot](images/screenshot.png)
+
+![App Screenshot](static/images/screenshot.png)

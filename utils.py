@@ -62,7 +62,9 @@ def view_summary(datafile):
     #balance
     balance = income-expense
 
-    print(f"\nIncome: {income}")
-    print(f"Expenditure: {expense}")
-    print(f"Balance: {balance}")
+    return {
+        "income": income,
+        "expense": expense,
+        "balance": balance
+    }
 
